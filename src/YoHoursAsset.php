@@ -19,7 +19,7 @@ class YoHoursAsset extends AssetBundle
     /**
      * {@inheritdoc}
      */
-    public $sourcePath = '@bower/jquery-yohours/dist';
+    public $sourcePath = '@npm/jquery-yohours/dist';
     /**
      * {@inheritdoc}
      */

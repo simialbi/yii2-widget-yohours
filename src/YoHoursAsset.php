@@ -37,7 +37,6 @@ class YoHoursAsset extends AssetBundle
      * {@inheritdoc}
      */
     public $depends = [
-        'yii\bootstrap4\BootstrapPluginAsset',
         'simialbi\yii2\yohours\FullcalendarAsset',
         'simialbi\yii2\yohours\JsmartAsset'
     ];

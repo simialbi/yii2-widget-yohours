@@ -55,12 +55,14 @@ class YoHoursAsset extends AssetBundle
         $lang = Yii::$app->language;
         if (file_exists(Yii::getAlias($this->sourcePath . '/js/i18n/' . $lang . '.min.js'))) {
             array_unshift($this->js, 'js/i18n/' . $lang . '.min.js');
-        } elseif (false !== strpos('-', $lang)) {
+        } elseif (false !== strpos($lang, '-')) {
             $tmp = explode('-', $lang);
 
             if (file_exists(Yii::getAlias($this->sourcePath . '/js/i18n/' . $tmp[0] . '.min.js'))) {
                 array_unshift($this->js, 'js/i18n/' . $tmp[0] . '.min.js');
             }
+        } else {
+            array_unshift($this->js, 'js/i18n/en.min.js');
         }
 
         parent::init();

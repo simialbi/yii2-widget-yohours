@@ -7,6 +7,9 @@
 namespace simialbi\yii2\yohours;
 
 use simialbi\yii2\widgets\InputWidget;
+use Yii;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 
 /**
  * The YoHours widget renders a bootstrap styled calendar input widget for
@@ -55,6 +58,9 @@ class YoHours extends InputWidget
     public function init()
     {
         parent::init();
+
+        Html::addCssClass($this->options, 'form-control');
+        $this->clientOptions['locale'] = ArrayHelper::getValue(explode('-', Yii::$app->language), '0', 'en');
     }
 
     /**

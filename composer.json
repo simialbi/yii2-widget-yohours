@@ -40,6 +40,7 @@
 	},
 	"require-dev": {
 		"yiisoft/yii2-coding-standards": "~2.0",
+		"yiisoft/yii2-bootstrap4": "~1.0@dev",
 		"phpunit/phpunit": "*"
 	},
 	"suggest": {
@@ -52,6 +53,11 @@
 	"autoload": {
 		"psr-4": {
 			"simialbi\\yii2\\yohours\\": "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"yiiunit\\extensions\\yohours": "tests"
 		}
 	}
 }

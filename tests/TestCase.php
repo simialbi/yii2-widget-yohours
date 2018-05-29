@@ -4,7 +4,7 @@
  * @author Simon Karlen <simi.albi@gmail.com>
  */
 
-namespace yiiunit\extensions\yohour;
+namespace yiiunit\extensions\yohours;
 
 use yii\di\Container;
 use yii\helpers\ArrayHelper;

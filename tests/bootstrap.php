@@ -11,7 +11,7 @@ $_SERVER['SCRIPT_FILENAME'] = __FILE__;
 require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
-Yii::setAlias('@yiiunit/extensions/yohour', __DIR__);
-Yii::setAlias('@simialbi/yii2/yohour', dirname(__DIR__) . '/src');
+Yii::setAlias('@yiiunit/extensions/yohours', __DIR__);
+Yii::setAlias('@simialbi/yii2/yohours', dirname(__DIR__) . '/src');
 
 require_once(__DIR__ . '/compatibility.php');

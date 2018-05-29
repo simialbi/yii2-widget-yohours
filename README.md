@@ -9,6 +9,7 @@ A live demo is available at [projets.pavie.info/yohours](http://projets.pavie.in
 ## Resources
  * [jQuery yohours plugin](https://github.com/simialbi/jquery-yohours)
  * [yii2](https://github.com/yiisoft/yii2) framework
+ * [bootstrap 3 | 4](https://getbootstrap.com)
 
 ## Installation 
 
@@ -47,13 +48,26 @@ To include an yohours input field widget call the widget like this:
 
     echo YoHours::widget([
         'name'  => 'opening_hours',
-        'value'  => $value
+        'value'  => $value,
+        // 'clientOptions' => [
+           // 'locale' => 'en',
+           // 'bootstrapVersion' => 'bootstrap4',
+           // 'height' => 600,
+           // 'delay' => 700
+        // ]
     ]);
     
     // or model like usage
     /* @var $form \yii\widgets\ActiveForm */
     /* @var $model \yii\base\Model */
-    echo $form->field($model, 'opening_hours')->widget(YoHours::class);
+    echo $form->field($model, 'opening_hours')->widget(YoHours::class, [
+        // 'clientOptions' => [
+           // 'locale' => 'en',
+           // 'bootstrapVersion' => 'bootstrap4',
+           // 'height' => 600,
+           // 'delay' => 700
+        // ]
+    ]);
 ?>
 </div>
 

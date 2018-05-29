@@ -21,7 +21,13 @@ use yii\helpers\Html;
  * <?php
  *    echo YoHours::widget([
  *        'model' => $model,
- *        'attribute' => 'opening_hours'
+ *        'attribute' => 'opening_hours',
+ *        // 'clientOptions' => [
+ *            // 'locale' => 'en',
+ *            // 'bootstrapVersion' => 'bootstrap4',
+ *            // 'height' => 600,
+ *            // 'delay' => 700
+ *        // ]
  *    ]);
  * ?>
  * ```
@@ -32,7 +38,13 @@ use yii\helpers\Html;
  * <?php
  *    echo YoHours::widget([
  *        'name'  => 'opening_hours',
- *        'value'  => $value
+ *        'value'  => $value,
+ *        // 'clientOptions' => [
+ *            // 'locale' => 'en',
+ *            // 'bootstrapVersion' => 'bootstrap4',
+ *            // 'height' => 600,
+ *            // 'delay' => 700
+ *        // ]
  *    ]);
  * ?>
  * ```
@@ -42,6 +54,12 @@ use yii\helpers\Html;
  *
  * ```php
  * <?= $form->field($model, 'opening_hours')->widget(\simialbi\yii2\yohours\YoHours::class, [
+ *        // 'clientOptions' => [
+ *            // 'locale' => 'en',
+ *            // 'bootstrapVersion' => 'bootstrap4',
+ *            // 'height' => 600,
+ *            // 'delay' => 700
+ *        // ]
  * ]); ?>
  * ```
  *
@@ -60,7 +78,17 @@ class YoHours extends InputWidget
         parent::init();
 
         Html::addCssClass($this->options, 'form-control');
-        $this->clientOptions['locale'] = ArrayHelper::getValue(explode('-', Yii::$app->language), '0', 'en');
+
+        if (!isset($this->clientOptions['locale'])) {
+            $this->clientOptions['locale'] = ArrayHelper::getValue(explode('-', Yii::$app->language), '0', 'en');
+        }
+        if (!isset($this->clientOptions['bootstrapVersion'])) {
+            if (class_exists('\yii\bootstrap4\Html')) {
+                $this->clientOptions['bootstrapVersion'] = 'bootstrap4';
+            } else {
+                $this->clientOptions['bootstrapVersion'] = 'bootstrap3';
+            }
+        }
     }
 
     /**

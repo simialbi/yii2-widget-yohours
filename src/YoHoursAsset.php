@@ -6,7 +6,6 @@
 
 namespace simialbi\yii2\yohours;
 
-
 use simialbi\yii2\web\AssetBundle;
 use Yii;
 
@@ -37,6 +36,7 @@ class YoHoursAsset extends AssetBundle
      * {@inheritdoc}
      */
     public $depends = [
+        'simialbi\yii2\yohours\CaretAsset',
         'simialbi\yii2\yohours\FullcalendarAsset',
         'simialbi\yii2\yohours\JsmartAsset'
     ];

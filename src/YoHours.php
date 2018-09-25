@@ -73,6 +73,15 @@ class YoHours extends InputWidget
 {
     /**
      * @var array Template overrides
+     *
+     * E.g. to use font awesome icons:
+     * ```php
+     * [
+     *     'iconClock' => '<i class="fas fa-clock"></i>',
+     *     'iconPencil' => '<i class="fas fa-pencil-alt"></i>',
+     *     'iconTrash' => '<i class="fas fa-trash-alt"></i>'
+     * ]
+     * ```
      * @see [[https://github.com/simialbi/jquery-yohours]]
      */
     public $templates = [];

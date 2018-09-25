@@ -10,6 +10,7 @@ use simialbi\yii2\widgets\InputWidget;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Json;
 
 /**
  * The YoHours widget renders a bootstrap styled calendar input widget for
@@ -71,6 +72,12 @@ use yii\helpers\Html;
 class YoHours extends InputWidget
 {
     /**
+     * @var array Template overrides
+     * @see [[https://github.com/simialbi/jquery-yohours]]
+     */
+    public $templates = [];
+
+    /**
      * {@inheritdoc}
      */
     public function init()
@@ -102,5 +109,25 @@ class YoHours extends InputWidget
         $this->registerPlugin('yoHours');
 
         return $html;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function registerPlugin($pluginName = null)
+    {
+        $view = $this->view;
+        YoHoursAsset::register($view);
+
+        $id = $this->options['id'];
+
+        if ($this->clientOptions !== false) {
+            $options = Json::htmlEncode($this->clientOptions);
+            $templates = Json::htmlEncode($this->templates);
+            $js = "jQuery('#$id').$pluginName($options, $templates);";
+            $view->registerJs($js);
+        }
+
+        $this->registerClientEvents();
     }
 }

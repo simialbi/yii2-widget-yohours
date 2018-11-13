@@ -1,64 +1,64 @@
 {
-	"name": "simialbi/yii2-widget-yohours",
-	"description": "yii2 widget to create opening_hours data",
-	"keywords": [
-		"yii2",
-		"yii2-widgets",
-		"openstreetmap",
-		"jquery",
-		"plugin",
-		"opening_hours",
-		"opening",
-		"hours"
-	],
-	"type": "yii2-extension",
-	"license": "MIT",
-	"support": {
-		"issues": "https://github.com/simialbi/yii2-widget-yohours/issues",
-		"source": "https://github.com/simialbi/yii2-widget-yohours"
-	},
-	"authors": [
-		{
-			"name": "Simon Karlen",
-			"email": "simi.albi@gmail.com"
-		}
-	],
-	"minimum-stability": "stable",
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://asset-packagist.org"
-		}
-	],
-	"require": {
-		"php": ">=5.6",
-		"yiisoft/yii2": "~2.0",
-		"simialbi/yii2-simialbi-base": "^0.2",
-		"npm-asset/jquery-yohours": "^1.0.10",
-		"npm-asset/jquery-caret": "~1.3",
-		"bower-asset/fullcalendar": "~3.9",
-		"bower-asset/jsmart": "~3.1"
-	},
-	"require-dev": {
-		"yiisoft/yii2-coding-standards": "~2.0",
-		"yiisoft/yii2-bootstrap4": "~1.0@dev",
-		"phpunit/phpunit": "*"
-	},
-	"suggest": {
-		"yiisoft/yii2-bootstrap": "Applies bootstrap 3 styles to input widget",
-		"yiisoft/yii2-bootstrap4": "Applies bootstrap 4 styles to input widget"
-	},
-	"config": {
-		"process-timeout": 1800
-	},
-	"autoload": {
-		"psr-4": {
-			"simialbi\\yii2\\yohours\\": "src"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"yiiunit\\extensions\\yohours\\": "tests"
-		}
-	}
+  "name": "simialbi/yii2-widget-yohours",
+  "description": "yii2 widget to create opening_hours data",
+  "keywords": [
+    "yii2",
+    "yii2-widgets",
+    "openstreetmap",
+    "jquery",
+    "plugin",
+    "opening_hours",
+    "opening",
+    "hours"
+  ],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/simialbi/yii2-widget-yohours/issues",
+    "source": "https://github.com/simialbi/yii2-widget-yohours"
+  },
+  "authors": [
+    {
+      "name": "Simon Karlen",
+      "email": "simi.albi@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "yiisoft/yii2": "~2.0",
+    "simialbi/yii2-simialbi-base": "*",
+    "npm-asset/jquery-yohours": "^1.0.10",
+    "npm-asset/jquery-caret": "~1.3",
+    "bower-asset/fullcalendar": "~3.9",
+    "bower-asset/jsmart": "~3.1"
+  },
+  "require-dev": {
+    "yiisoft/yii2-coding-standards": "~2.0",
+    "yiisoft/yii2-bootstrap4": "~1.0@dev",
+    "phpunit/phpunit": "*"
+  },
+  "suggest": {
+    "yiisoft/yii2-bootstrap": "Applies bootstrap 3 styles to input widget",
+    "yiisoft/yii2-bootstrap4": "Applies bootstrap 4 styles to input widget"
+  },
+  "config": {
+    "process-timeout": 1800
+  },
+  "autoload": {
+    "psr-4": {
+      "simialbi\\yii2\\yohours\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "yiiunit\\extensions\\yohours\\": "tests"
+    }
+  }
 }

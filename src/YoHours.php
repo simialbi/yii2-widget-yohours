@@ -87,7 +87,7 @@ class YoHours extends InputWidget
     public $templates = [];
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function init()
     {
@@ -108,7 +108,7 @@ class YoHours extends InputWidget
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function run()
     {
@@ -121,19 +121,23 @@ class YoHours extends InputWidget
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
-    protected function registerPlugin($pluginName = null)
+    protected function registerPlugin($pluginName = null, $selector = null)
     {
         $view = $this->view;
         YoHoursAsset::register($view);
 
         $id = $this->options['id'];
 
+        if (empty($selector)) {
+            $selector = '#' . $id;
+        }
+
         if ($this->clientOptions !== false) {
             $options = Json::htmlEncode($this->clientOptions);
             $templates = Json::htmlEncode($this->templates);
-            $js = "jQuery('#$id').$pluginName($options, $templates);";
+            $js = "jQuery('$selector').$pluginName($options, $templates);";
             $view->registerJs($js);
         }
 

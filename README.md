@@ -9,7 +9,7 @@ A live demo is available at [projets.pavie.info/yohours](http://projets.pavie.in
 ## Resources
  * [jQuery yohours plugin](https://github.com/simialbi/jquery-yohours)
  * [yii2](https://github.com/yiisoft/yii2) framework
- * [bootstrap 3 | 4](https://getbootstrap.com)
+ * [bootstrap 3 | 4 | 5](https://getbootstrap.com)
 
 ## Installation 
 
@@ -35,12 +35,12 @@ To include an yohours input field widget call the widget like this:
 
 ````php
 <?php
-    /* @var $this yii\web\View */
-    /* @var $value string */
+/* @var $this yii\web\View */
+/* @var $value string */
+
+use simialbi\yii2\yohours\YoHours;
     
-    use simialbi\yii2\yohours\YoHours;
-    
-    ?>
+?>
 
 
 <div class="my-form">

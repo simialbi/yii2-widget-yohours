@@ -99,7 +99,9 @@ class YoHours extends InputWidget
             $this->clientOptions['locale'] = ArrayHelper::getValue(explode('-', Yii::$app->language), '0', 'en');
         }
         if (!isset($this->clientOptions['bootstrapVersion'])) {
-            if (class_exists('\yii\bootstrap4\Html')) {
+            if (class_exists('\yii\bootstrap5\Html')) {
+                $this->clientOptions['bootstrapVersion'] = 'bootstrap5';
+            } elseif (class_exists('\yii\bootstrap4\Html')) {
                 $this->clientOptions['bootstrapVersion'] = 'bootstrap4';
             } else {
                 $this->clientOptions['bootstrapVersion'] = 'bootstrap3';

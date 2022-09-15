@@ -84,12 +84,12 @@ class YoHours extends InputWidget
      * ```
      * @see [[https://github.com/simialbi/jquery-yohours]]
      */
-    public $templates = [];
+    public array $templates = [];
 
     /**
      * {@inheritDoc}
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
 
@@ -112,7 +112,7 @@ class YoHours extends InputWidget
     /**
      * {@inheritDoc}
      */
-    public function run()
+    public function run(): string
     {
         parent::run();
 
@@ -125,7 +125,7 @@ class YoHours extends InputWidget
     /**
      * {@inheritDoc}
      */
-    protected function registerPlugin($pluginName = null, $selector = null)
+    protected function registerPlugin(?string $pluginName = null, ?string $selector = null)
     {
         $view = $this->view;
         YoHoursAsset::register($view);
